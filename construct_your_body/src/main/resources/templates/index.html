@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>Construct Your Body</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{index.css}">
+	<link rel="stylesheet" th:href="@{/user_css/header.css}">
+</head>
+<body>
+	
+	<!-- Header Section -->
+	<div th:replace="~{/user/header::header}"></div>
+	
+     
+    <!-- Hero Section -->
+    <section class="hero" >
+        <div>
+            <h1>Construct Your Body</h1>
+            <p>Track workouts, monitor progress, and achieve your fitness goals.</p>
+            <a  sec:authorize="!isAuthenticated()" th:href="@{/register}"><button>Join Now</button></a>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard">
+        <h2>Your Dashboard</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Workout Plans</h3>
+                <p>Access personalized workout routines designed by professionals.</p>
+            </div>
+            <div class="card">
+                <h3>Nutrition Tracking</h3>
+                <p>Monitor your daily calorie intake and maintain a balanced diet.</p>
+            </div>
+            <div class="card">
+                <h3>Progress Reports</h3>
+                <p>Track your performance and see real-time improvement analytics.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        © 2026 CyB Gym | All Rights Reserved
+    </footer>
+
+	<!-- JS -->
+	<div th:replace="~{/user/navbar_js::navbarScript}"></div>
+
+</body>
+</html>
