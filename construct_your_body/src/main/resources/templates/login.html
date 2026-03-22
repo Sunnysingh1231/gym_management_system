@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Construct Your Body</title>
+<link rel="stylesheet" th:href="@{/user_css/login.css}">
+</head>
+<body>
+
+	<!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">CyB</div>
+        <div class="nav-buttons">
+            <a th:href="@{/}" class="back-btn">Back</a>
+        </div>
+    </nav>
+
+    <form th:action="@{/login}" th:method="POST">
+        <div class="container">
+            <h2>CyB Login</h2>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" name="username" placeholder="Enter your email">
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter your password">
+            </div>
+
+            <button class="btn">Login</button>
+
+            <div class="link">
+                Don't have an account? <a th:href="@{/register}">Register</a>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>

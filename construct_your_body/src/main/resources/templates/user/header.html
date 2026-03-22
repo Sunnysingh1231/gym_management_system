@@ -1,0 +1,41 @@
+
+	<div th:fragment="header">
+		
+	    <nav class="navbar">
+	        <div class="logo">CyB</div>
+	        
+	        <!-- Hamburger -->
+	        <div class="menu-toggle" id="mobile-menu">
+	            <span class="bar"></span>
+	            <span class="bar"></span>
+	            <span class="bar"></span>
+	        </div>
+	        
+	        <div class="nav-buttons" id="nav-links">
+	        
+		        <div class="welcome" sec:authorize="isAuthenticated()">
+		        
+			        <a th:href="@{/user}">Home</a>
+	                <a th:href="@{/user/membership}">Membership</a>
+	                <a th:href="@{/user/dashboard}">Dashboard</a>
+	                <a th:href="@{/user/profile}">Profile</a>
+	                <a th:href="@{/user/about}">About</a>
+	                <a th:href="@{/user/contact-us}">Contact</a>
+			        
+			        <span class="username">
+                    	Welcome <span sec:authentication="name"></span>
+                	</span>
+		        	<form th:method="POST" th:action="@{/logout}">
+	                    <button class="btn logout-btn">Logout</button>
+	                </form>
+		        </div>
+	        
+		        <div class="auth-links" sec:authorize="!isAuthenticated()">
+	                <a th:href="@{/login}" class="btn outline">Login</a>
+	                <a th:href="@{/register}" class="btn primary">Register</a>
+	            </div>
+	        </div>
+	    </nav>
+	</div>
+	
+

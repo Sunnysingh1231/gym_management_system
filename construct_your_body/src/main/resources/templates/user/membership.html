@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Construct Your Body</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" th:href="@{/user_css/header.css}">
+<link rel="stylesheet" th:href="@{/user_css/membership.css}">
+</head>
+<body>
+	
+	<!-- Header Section -->
+	<div th:replace="~{/user/header::header}"></div>
+	
+	<!-- Header -->
+	<div class="header">
+	    <h1><span>Membership</span>Package</h1>
+	</div>
+	
+	<!-- Pricing Section -->
+	<section>
+	 
+		<form class="pricing" th:action="@{/user/membership}" method="post">
+			<div class="card">
+		        <div class="icon">
+		            <i class="fas fa-dumbbell"></i>
+		        </div>
+		        <h2>Platinum Membership</h2>
+		        <div class="price">₹1999 / month</div>
+		        <p>2 training sessions a month, health check, and 10% off gym gear.</p>
+		        <button th:value="1999+','+Platinum" name="value">Join Now</button>
+		    </div>
+	
+		    <div class="card">
+		        <div class="icon">
+		            <i class="fa-solid fa-weight-hanging"></i>
+		        </div>
+		        <h2 name="type" th:value="Gold">Gold Membership</h2>
+		        <div class="price" name="value" th:value="1999">₹1499 / month</div>
+		        <p>Unlimited gym access, 3 free classes per week, 1 personal training session per month.</p>
+		        <button th:value="1499+','+Gold" name="value">Join Now</button>
+		    </div>
+		
+		    <div class="card">
+		        <div class="icon">
+		            <i class="fas fa-dumbbell"></i>
+		        </div>
+		        <h2>Silver Membership</h2>
+		        <div class="price">₹999 / month</div>
+		        <p>Unlimited gym access, 1 class per week & access to standard locker rooms.</p>
+		        <button th:value="999+','+Silver" name="value">Join Now</button>
+		    </div>
+		
+		</section>
+		
+		<!-- Classes Section -->
+		<section class="classes">
+		    <h2>Individual Classes & Personal Training</h2>
+		
+		    <div class="class-container">
+		        <div class="class-box">
+		            <h3>Yoga & Pilates</h3>
+		            <p>$15 / session</p>
+		            <button>Join Now</button>
+		        </div>
+		
+		        <div class="class-box">
+		            <h3>Spin Class</h3>
+		            <p>$18 / session</p>
+		            <button>Join Now</button>
+		        </div>
+		
+		        <div class="class-box">
+		            <h3>Buddy Training</h3>
+		            <p>$75 / hour</p>
+		            <button>Join Now</button>
+		        </div>
+		
+		        <div class="class-box">
+		            <h3>One-on-One Session</h3>
+		            <p>$50 / hour</p>
+		            <button>Join Now</button>
+		        </div>
+		    </div>
+		</form>
+	    
+	</section>
+	
+	<!-- Special Offers -->
+	<section class="offers">
+	    <h2>Special Offers</h2>
+	
+	    <div class="offer-container">
+	        <div class="offer-box">
+	            <h3>Free Week Trial</h3>
+	            <p>Sign up before August 31st and get 20% off your first three months of Platinum Membership.</p>
+	        </div>
+	
+	        <div class="offer-box">
+	            <h3>Refer a Friend</h3>
+	            <p>New members can enjoy a one-week free trial with unlimited access to the gym and classes.</p>
+	        </div>
+	    </div>
+	</section>
+	
+	<!-- Footer -->
+    <footer class="footer">
+        © 2026 CyB Gym | All Rights Reserved
+    </footer>
+    
+    <!-- JS -->
+	<div th:replace="~{/user/navbar_js::navbarScript}"></div>
+	
+	
+	<script>
+		
+		let logout_btn = document.getElementByClassName("logout-btn")[0];
+		logout_btn.addEventListener("click",()=>{
+			alert("Are you sure...")
+		})
+	
+	
+	</script>
+	
+</body>
+</html>
