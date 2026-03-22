@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0f0f0f;
+    color: #fff;
+    padding-top: 80px;
+    overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ff3c00;
+}
+
+/* ================= NAV LINKS ================= */
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.welcome {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.auth-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ================= BUTTON STYLE ================= */
+
+.btn,
+.nav-buttons a {
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border: none;
+    cursor: pointer;
+    color:#fff;
+}
+
+/* Primary Button */
+.primary {
+    background: #ff3c00;
+    color: #fff;
+}
+
+.primary:hover {
+    background: #ff6a00;
+}
+
+/* Outline Button */
+.outline {
+    border: 2px solid #ff3c00;
+    color: #ff3c00;
+}
+
+.outline:hover {
+    background: #ff3c00;
+    color: #fff;
+}
+
+/* Logout Button */
+.logout-btn {
+    background: #ff3c00;
+    color: #fff;
+}
+
+.logout-btn:hover {
+    background: #ff6a00;
+}
+
+.username {
+    color: #ff3c00;
+    font-weight: 600;
+}
+
+/* ================= HAMBURGER ================= */
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background: #ff3c00;
+    border-radius: 3px;
+    transition: 0.4s ease;
+}
+
+/* Animate to X */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Footer */
+.footer {
+    background: #000;
+    padding: 20px;
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 920px) {
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-buttons {
+        position: absolute;
+        top: 65px; 
+        right: 8%;
+        width: 230px;
+        background: #111;
+        border-radius: 10px;
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        animation: dropdown 0.3s ease forwards;
+    }
+
+    .nav-buttons.active {
+        display: flex;
+    }
+
+    .welcome,
+    .auth-links {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .username{
+    	display:none;
+    }
+}
+
+/* Smooth dropdown animation */
+@keyframes dropdown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
