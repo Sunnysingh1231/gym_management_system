@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Construct Your Body</title>
+<link rel="stylesheet" th:href="@{/user_css/register.css}">
+</head>
+<body>
+
+	<!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">CyB</div>
+        <div class="nav-buttons">
+            <a th:href="@{/}" class="back-btn">Back</a>
+        </div>
+    </nav>
+
+<div class="container">
+    <h2>Create Account</h2>
+
+    <!-- FORM START -->
+    <form th:action="@{/register}" th:method="POST" onsubmit="return validatePassword()" th:object="${user}">
+
+        <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" name="fullName" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="password" name="password"
+                   placeholder="Create password"
+                   pattern=".{1,}"
+                   title="Password must be at least 1 characters"
+                   required>
+        </div>
+
+        <div class="input-group">
+            <label>Confirm Password</label>
+            <input type="password" id="confirmPassword"
+                   placeholder="Confirm password"
+                   required>
+            <div id="errorMsg" class="error"></div>
+        </div>
+
+        <button type="submit" class="btn">Register</button>
+
+    </form>
+    <!-- FORM END -->
+
+    <div class="link">
+        Already have an account? <a th:href="@{/login}">Login</a>
+    </div>
+</div>
+
+<script>
+function validatePassword(){
+    var pass = document.getElementById("password").value;
+    var confirmPass = document.getElementById("confirmPassword").value;
+    var errorMsg = document.getElementById("errorMsg");
+
+    if(pass !== confirmPass){
+        errorMsg.innerHTML = "Passwords do not match!";
+        return false;
+    }
+    return true;
+}
+</script>
+
+</body>
+</html>

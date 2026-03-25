@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Construct Your Body</title>
+<link rel="stylesheet" th:href="@{/user_css/header.css}">
+<style>
+	/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    background: #0f0f0f;
+    color: #fff;
+}
+
+/* Buttons */
+.btn {
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn.primary {
+    background: #ff3c00;
+    color: #fff;
+}
+
+.btn.primary:hover {
+    background: #ff6a00;
+}
+
+/* Hero Section */
+.contact-hero {
+    background: url('../images/contact-hero.jpg') no-repeat center center/cover;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.contact-hero h1 {
+    font-size: 42px;
+    color: #ff3c00;
+    margin-bottom: 15px;
+}
+
+.contact-hero p {
+    font-size: 18px;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.contact-form-section .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Contact Info */
+.contact-info {
+    flex: 1 1 350px;
+    max-width: 400px;
+    background: #1c1c1c;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.contact-info h2 {
+    color: #ff3c00;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.contact-info .social-link {
+    color: #ff3c00;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.contact-info .social-link:hover {
+    color: #ff6a00;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1 1 350px;
+    max-width: 500px;
+    background: #1c1c1c;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.contact-form h2 {
+    color: #ff3c00;
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    background: #2a2a2a;
+    color: #fff;
+    resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #aaa;
+}
+
+.contact-form button {
+    width: fit-content;
+    align-self: flex-start;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-form-section .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info, .contact-form {
+        width: 90%;
+        max-width: none;
+    }
+
+    .contact-hero h1 {
+        font-size: 32px;
+    }
+
+    .contact-hero p {
+        font-size: 16px;
+    }
+}
+	
+</style>
+</head>
+<body>
+
+	<div th:replace="~{/user/header::header}"></div>
+	
+	<!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="hero-content">
+            <h1>Get in Touch with Us</h1>
+            <p>Have questions? Need guidance? Our team is here to help you achieve your fitness goals.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="contact-info">
+                <h2>Contact Info</h2>
+                <p><strong>Address:</strong> 123 Fitness St, Gym City</p>
+                <p><strong>Email:</strong> support@cybgym.com</p>
+                <p><strong>Phone:</strong> +1 234 567 890</p>
+                <p><strong>Follow us:</strong> 
+                    <a href="#" class="social-link">Facebook</a>, 
+                    <a href="#" class="social-link">Instagram</a>, 
+                    <a href="#" class="social-link">Twitter</a>
+                </p>
+            </div>
+
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form th:action="@{/contact}" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+	    <!-- Footer -->
+	    <footer class="footer">
+	        © 2026 CyB Gym | All Rights Reserved
+	    </footer>
+	<!-- JS -->
+	<div th:replace="~{/user/navbar_js::navbarScript}"></div>
+</body>
+</html>

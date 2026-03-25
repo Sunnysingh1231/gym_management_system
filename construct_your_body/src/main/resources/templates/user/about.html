@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Construct Your Body</title>
+<link rel="stylesheet" th:href="@{/user_css/header.css}">
+<style>
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body {
+    background: #0f0f0f;
+    color: #fff;
+}
+
+/* Buttons */
+.btn {
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.btn.primary {
+    background: #ff3c00;
+    color: #fff;
+}
+
+.btn.primary:hover {
+    background: #ff6a00;
+}
+
+/* Hero Section */
+.about-hero {
+    background: url('../images/gym-hero.jpg') no-repeat center center/cover;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px; /* reduced padding to avoid overflow */
+    width: 100%;
+}
+
+.about-hero .hero-content {
+    max-width: 1200px; /* limit content width */
+}
+
+.about-hero .hero-content h1 {
+    font-size: 48px;
+    color: #ff3c00;
+    margin-bottom: 20px;
+}
+
+.about-hero .hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Mission Section */
+.about-mission {
+    padding: 60px 10px; /* reduced padding */
+    background: #111;
+    text-align: center;
+}
+
+.about-mission .container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px; /* prevent overflow */
+    margin: 0 auto;
+}
+
+.mission-card {
+    background: #1c1c1c;
+    padding: 30px;
+    border-radius: 12px;
+    flex: 1 1 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    max-width: 400px; /* limit width */
+}
+
+.mission-card h2 {
+    color: #ff3c00;
+    margin-bottom: 15px;
+}
+
+.mission-card p {
+    line-height: 1.6;
+}
+
+/* Trainers Section */
+.about-trainers {
+    padding: 60px 10px;
+    text-align: center;
+}
+
+.about-trainers h2 {
+    font-size: 36px;
+    color: #ff3c00;
+    margin-bottom: 40px;
+}
+
+.trainers-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.trainer-card {
+    background: #1c1c1c;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 250px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.trainer-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.trainer-card h3 {
+    color: #ff3c00;
+    margin: 15px 0 5px 0;
+}
+
+.trainer-card p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* CTA Section */
+.about-cta {
+    padding: 60px 10px;
+    background: #111;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-cta h2 {
+    font-size: 32px;
+    color: #ff3c00;
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-hero .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .about-mission .container,
+    .trainers-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .trainer-card {
+        width: 90%; /* increased to fill mobile screen */
+        margin-bottom: 20px;
+    }
+}
+
+	
+</style>
+</head>
+<body>
+
+	<div th:replace="~{/user/header::header}"></div>
+	
+	<!-- About Section -->
+    <section class="about-hero">
+        <div class="hero-content">
+            <h1>Welcome to CyB Gym</h1>
+            <p>Where strength meets discipline. Transform your body, mind, and lifestyle with our expert trainers and state-of-the-art facilities.</p>
+            <a th:href="@{/membership}" class="btn primary">Join Now</a>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="about-mission">
+        <div class="container">
+            <div class="mission-card">
+                <h2>Our Mission</h2>
+                <p>At CyB Gym, we aim to inspire people to reach their full potential. We provide personalized workout plans, professional coaching, and a supportive community.</p>
+            </div>
+            <div class="mission-card">
+                <h2>Our Vision</h2>
+                <p>To be the most trusted and innovative fitness center, where everyone can achieve their goals and lead a healthier, stronger life.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section class="about-trainers">
+        <h2>Meet Our Trainers</h2>
+        <div class="trainers-container">
+            <div class="trainer-card">
+                <img th:src="@{/images/trainer1.jpg}" alt="Trainer">
+                <h3>John Smith</h3>
+                <p>Strength & Conditioning Expert</p>
+            </div>
+            <div class="trainer-card">
+                <img th:src="@{/images/trainer2.jpg}" alt="Trainer">
+                <h3>Sarah Lee</h3>
+                <p>Yoga & Flexibility Coach</p>
+            </div>
+            <div class="trainer-card">
+                <img src="@{/images/trainer3.jpg}" alt="Trainer">
+                <h3>Mike Johnson</h3>
+                <p>Personal Trainer & Nutritionist</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="about-cta">
+        <h2>Ready to Transform Your Life?</h2>
+        <a th:href="@{/membership}" class="btn primary">Start Your Journey</a>
+    </section>
+    
+        <!-- Footer -->
+	    <footer class="footer">
+	        © 2026 CyB Gym | All Rights Reserved
+	    </footer>
+	
+<!-- JS -->
+	<div th:replace="~{/user/navbar_js::navbarScript}"></div>
+</body>
+</html>

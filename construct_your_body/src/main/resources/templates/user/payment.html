@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Construct your Body</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0f0f0f;
+            color: #fff;
+        }
+
+        /* Navbar */
+        .navbar {
+            padding: 20px 8%;
+            background: rgba(0, 0, 0, 0.9);
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: #ff3c00;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 10px auto;
+            padding: 20px;
+        }
+
+        .payment-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* Order Summary */
+        .summary {
+            background: #1c1c1c;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .summary h2 {
+            margin-bottom: 20px;
+            color: #ff3c00;
+        }
+
+        .summary div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            color: #bbb;
+        }
+
+        .summary .total {
+            margin-top: 15px;
+            font-weight: 600;
+            color: #fff;
+            font-size: 18px;
+        }
+        .total{
+            margin: auto;
+            margin-top: 20px;
+            width: 90%;
+            padding: 14px 30px;
+            background: #ff3c00;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            color: white;
+        }
+
+        /* Payment Methods */
+        .methods {
+            background: #1c1c1c;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .methods h2 {
+            margin-bottom: 20px;
+            color: #ff3c00;
+        }
+
+        .method-option {
+            background: #222;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .method-option:hover {
+            border-color: #ff3c00;
+        }
+
+        .method-option input {
+            margin-right: 10px;
+        }
+
+        /* Form Fields */
+        .payment-form {
+            margin-top: 20px;
+        }
+
+        .payment-form input,
+        .payment-form select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            background: #333;
+            color: #fff;
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .row input {
+            flex: 1;
+        }
+
+        /* Pay Button */
+        .pay-btn {
+            margin-top: 20px;
+            width: 100%;
+            padding: 14px;
+            background: #ff3c00;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .pay-btn:hover {
+            background: #ff6a00;
+        }
+
+        /* Responsive */
+        @media(max-width: 768px) {
+            .payment-box {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">CyB Secure Payment</div>
+
+    <div class="container">
+        <div class="payment-box">
+
+            <!-- Order Summary -->
+            <div class="summary">
+                <h2>Order Summary</h2>
+                <div>
+                    <span>Gym Membership</span>
+                    <span class="payable" th:text="${value}">₹999</span>
+                </div>
+                <div>
+                    <span>GST (18%)</span>
+                    <span class="gst"></span>
+                </div>
+                <div>
+                    <span>Total Discount (18%)</span>
+                    <span class="gst"></span>
+                </div>
+                <div class="total">
+                    <span>Total</span>
+                    <span class="netpay"></span>
+                </div>
+            </div>
+
+            <!-- Payment Section -->
+            
+            <form th:action="@{/user/payment}" th:method="post">
+            
+            	<div class="methods">
+	                <h2>Select Payment Method</h2>
+	
+	                <div class="method-option">
+	                    <label><input type="radio" name="payment"> UPI</label>
+	                </div>
+	
+	                <div class="method-option">
+	                    <label><input type="radio" name="payment"> Paytm</label>
+	                </div>
+	
+	                <div class="method-option">
+	                    <label><input type="radio" name="payment"> Google Pay</label>
+	                </div>
+	
+	                <div class="method-option">
+	                    <label><input type="radio" name="payment"> Credit / Debit Card</label>
+	                </div>
+	
+	                <!-- Payment Form -->
+	                <div class="payment-form">
+	
+	                    <input type="text" placeholder="Card Number">
+	                    <input type="text" placeholder="Card Holder Name">
+	
+	                    <div class="row">
+	                        <input type="text" placeholder="MM/YY">
+	                        <input type="text" placeholder="CVV">
+	                    </div>
+	
+	                    <button class="pay-btn">Pay <span class="netpay"></span> Securely</button>
+	                </div>
+	
+	            </div>
+            </form>
+
+        </div>
+    </div>
+<script>
+    let payable = document.getElementsByClassName("payable")[0]
+    let gst = document.getElementsByClassName("gst")[0]
+    let discount = document.getElementsByClassName("gst")[1]
+    let netpay = document.getElementsByClassName("netpay")[0]
+    let pay = document.getElementsByClassName("netpay")[1]
+
+    console.log(parseInt(payable.innerHTML.slice(1)))
+    let calGst = (parseInt(payable.innerHTML.slice(1))*18/100)
+    let tdiscount = parseInt(payable.innerHTML.slice(1))*18/100
+    gst.innerHTML="₹"+calGst
+    discount.innerHTML = "-"+tdiscount
+    netpay.innerHTML="₹"+Math.floor((calGst)-tdiscount+parseInt(payable.innerHTML.slice(1)))
+    pay.innerHTML="₹"+Math.floor((calGst)-tdiscount+parseInt(payable.innerHTML.slice(1)))
+</script>
+</body>
+</html>
