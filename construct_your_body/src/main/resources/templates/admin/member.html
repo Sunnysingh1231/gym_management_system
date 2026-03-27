@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin-Cyb</title>
+<link rel="stylesheet" th:href="@{/admin_css/member.css}">
+<link rel="stylesheet" th:href="@{/admin_css/header.css}">
+</head>
+<body>
+
+	<!-- Nav Bar -->
+	<div th:replace="~{/admin/header::navbar}"></div>
+	
+	<!-- Table -->
+	    <div class="table-section">
+	        <h2>Recent Members</h2>
+	        <table>
+	            <tr>
+	                <th>#</th>
+	                <th>Name</th>
+	                <th>Email</th>
+	                <th>Status</th>
+	                <th>Join Date</th>
+	                <th>Delete</th>
+	                <th>Edit</th>
+	            </tr>
+	            <tr th:each="user : ${users}">
+	                <td th:text="${user.id}"></td>
+	                <td th:text="${user.fullName}"></td>
+	                <td th:text="${user.email}"></td>
+	                <td>12 Feb 2026</td>
+	                <td>12 Feb 2026</td>
+	                <td><button>Delete</button></td>
+	                <td><button>Edit</button></td>
+	            </tr>
+	        </table>
+	        
+	        
+	    </div>
+	    
+	    <!-- Pagination Controls -->
+        <div class="pagination">
+            <a
+               > Previous</a>
+
+            <span>Page <span ></span> of <span></span></span>
+
+            <a 
+               >Next </a>
+        </div>
+
+	<script>
+		function toggleMenu(){
+		    document.getElementById("sidebar").classList.toggle("active");
+		    document.querySelector(".overlay").classList.toggle("active");
+		    document.getElementById("mobile-menu").classList.toggle("act");
+		}
+	</script>
+</body>
+</html>

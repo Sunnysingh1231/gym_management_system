@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin-Cyb</title>
+<link rel="stylesheet" th:href="@{/admin_css/setting.css}">
+<link rel="stylesheet" th:href="@{/admin_css/header.css}">
+</head>
+<body>
+
+	<!-- Nav Bar -->
+	<div th:replace="~{/admin/header::navbar}"></div>
+
+<script>
+	function toggleMenu(){
+	    document.getElementById("sidebar").classList.toggle("active");
+	    document.querySelector(".overlay").classList.toggle("active");
+	    document.getElementById("mobile-menu").classList.toggle("act");
+	}
+</script>
+</body>
+</html>

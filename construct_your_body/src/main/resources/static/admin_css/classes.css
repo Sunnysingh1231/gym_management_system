@@ -1,0 +1,21 @@
+@charset "UTF-8";
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    display:flex;
+    background:#0f172a;
+    color:#fff;
+}
+
+/* ========== MAIN CONTENT ========== */
+
+.main{
+    margin: 48px 0px 0px 260px;
+    width:100%;
+    padding:30px;
+}

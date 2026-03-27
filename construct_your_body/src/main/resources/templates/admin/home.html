@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin-CyB</title>
+<link rel="stylesheet" th:href="@{/admin_css/home.css}">
+<link rel="stylesheet" th:href="@{/admin_css/header.css}">
+</head>
+<body>
+
+	<!-- Nav Bar -->
+	<div th:replace="~{/admin/header::navbar}"></div>
+	
+	<!-- Main Content -->
+	<div class="main">
+	
+	    <!-- Cards -->
+	    <div class="cards">
+	        <div class="card">
+	           
+	           	<h3>Total Members</h3>
+	            <p><span class="activeMem" th:text="${activeMem}"></span>/<span class="totalMem" th:text="${totalMem}"></span> Active Members</p>
+	            <div class="progress-container">
+	                <div class="progress">
+	                    <div class="progress-bar progress1"></div>
+	                </div>
+	            </div>
+	        </div>
+	
+	        <div class="card">
+	        	<!--  <h3>Monthly Revenue</h3> -->
+	            <h3>Total Revenue</h3>
+	            <p>$18,400 This Month <span th:text="${totalRev}"></span></p>
+	            <div class="progress-container">
+	                <div class="progress">
+	                    <div class="progress-bar progress2"></div>
+	                </div>
+	            </div>
+	        </div>
+	
+	        <div class="card">
+	            <h3>Trainer Performance</h3>
+	            <p>60% Client Satisfaction Growth</p>
+	            <div class="progress-container">
+	                <div class="progress">
+	                    <div class="progress-bar progress3"></div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	
+	    <!-- Table -->
+	    <div class="table-section">
+	        <h2>Recent Members</h2>
+	        <table>
+	            <tr>
+	                <th>User ID</th>
+	                <th>Name</th>
+	                <th>Email</th>
+	                <th>Status</th>
+	                <th>Join Date</th>
+	            </tr>
+	            <tr th:each="user : ${users}">
+	                <td th:text="${user.id}"></td>
+	                <td th:text="${user.fullName}"></td>
+	                <td th:text="${user.email}"></td>
+	                <td>12 Feb 2026</td>
+	                <td>12 Feb 2026</td>
+	            </tr>
+	        </table>
+	    </div>
+	
+	</div>
+	
+	<script>
+		function toggleMenu(){
+		    document.getElementById("sidebar").classList.toggle("active");
+		    document.querySelector(".overlay").classList.toggle("active");
+		    document.getElementById("mobile-menu").classList.toggle("act");
+		}
+		
+		let activeMem = document.getElementsByClassName("activeMem")[0]
+		let totalMem = document.getElementsByClassName("totalMem")[0]
+		let progress1 = document.getElementsByClassName("progress1")[0]
+		
+		
+		
+		let netActiveMem = (parseInt(activeMem.innerHTML)*100)/parseInt(totalMem.innerHTML)
+		progress1.style.width = netActiveMem+"%";
+		progress1.style.background = "#ff4d00";
+	</script>
+</body>
+</html>
+</html>

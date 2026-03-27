@@ -1,0 +1,39 @@
+
+<div th:fragment="navbar">
+
+<!-- Navbar -->
+ <nav class="navbar">
+        
+        <!-- Hamburger -->
+        <div class="menu-toggle" id="mobile-menu" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        
+        <div class="logo">CyB Admin Dashboard</div>
+        
+		<div class="adminid" sec:authorize="isAuthenticated()">Welcome <span sec:authentication="name"></span></div>
+		
+        <!-- Navigation Links -->
+        <div>
+            <form th:method="POST" th:action="@{/logout}">
+                <button class="btn logout-btn">Logout</button>
+            </form>
+        </div>
+        
+    </nav>  
+    <!-- Overlay -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a th:href="@{/admin/dashboard}">🏠 Dashboard</a></li>
+            <li><a th:href="@{/admin/members}">💪 Members</a></li>
+            <li><a th:href="@{/admin/classes}">📅 Classes</a></li>
+            <li><a th:href="@{/admin/reports}">📊 Reports</a></li>
+            <li><a th:href="@{/admin/setting}">⚙ Settings</a></li>
+        </ul>
+    </div>
+</div>
