@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Construct Your Body</title>
+</head>
+<body>
+
+	<!-- fragments/navbar-script.html -->
+	<div th:fragment="navbarScript">
+	    <script>
+	    document.addEventListener("DOMContentLoaded", function () {
+	        const menu = document.getElementById("mobile-menu");
+	        const navLinks = document.getElementById("nav-links");
+	
+	        if (menu && navLinks) {
+	            menu.addEventListener("click", function () {
+	                menu.classList.toggle("active");
+	                navLinks.classList.toggle("active");
+	            });
+	        }
+	    });
+	    </script>
+	</div>
+	
+</body>
+</html>

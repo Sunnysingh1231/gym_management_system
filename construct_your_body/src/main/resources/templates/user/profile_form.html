@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Construct Your Body</title>
+<style>
+
+	* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0f0f0f;
+            color: #fff;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ff3c00;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            margin-left: 15px;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+
+        .back-btn {
+            border: 2px solid #ff3c00;
+            color: #ff3c00;
+        }
+
+        .back-btn:hover {
+            background: #ff3c00;
+            color: #fff;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            padding: 120px 8% 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-card {
+            background: #1c1c1c;
+            padding: 40px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.6);
+        }
+
+        .profile-card h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff3c00;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #bbb;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            background: #111;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border: 1px solid #ff3c00;
+        }
+
+        .save-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 30px;
+            background: #ff3c00;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .save-btn:hover {
+            background: #ff6a00;
+        }
+
+        /* Responsive */
+        @media(max-width: 600px) {
+            .profile-card {
+                padding: 25px;
+            }
+        }
+
+</style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">CyB</div>
+        <div class="nav-buttons">
+            <a th:href="@{/user/profile}" class="back-btn">Back</a>
+        </div>
+    </nav>
+
+    <!-- Profile Edit Section -->
+    <section class="profile-section">
+        <div class="profile-card">
+            <h2>Edit Profile</h2>
+
+            <form th:action="@{/user/profile/edit}" th:method="POST">
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="fullName" th:value="${fullName}" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" th:value="${phone}" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender</label>
+                    <select name="gender">
+                        <option th:value="Select">Select Gender</option>
+                        <option th:value="MALE">Male</option>
+                        <option th:value="FEMALE">Female</option>
+                        <option th:value="OTHER">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Height (cm)</label>
+                    <input type="number" name="height" th:value="${height}" placeholder="Enter your height" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Weight (kg)</label>
+                    <input type="number" name="weight" th:value="${weight}" placeholder="Enter your weight" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="number" name="age" th:value="${age}" placeholder="Enter your age" required>
+                </div>
+
+                <button type="submit" class="save-btn">Save Changes</button>
+
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>

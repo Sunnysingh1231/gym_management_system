@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Construct Your Body</title>
+<link rel="stylesheet" th:href="@{/user_css/header.css}">
+<style>
+	* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0f0f0f;
+    color: #fff;
+    padding-top: 100px; /* For fixed navbar */
+}
+
+/* Container */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* Card */
+.profile-card {
+    background: #1c1c1c;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Profile Image */
+.profile-image {
+    flex: 1;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid #ff3c00;
+    object-fit: cover;
+}
+
+/* Profile Info */
+.profile-info {
+    flex: 2;
+    padding: 30px;
+}
+.profile-item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 equal columns */
+    gap: 10px; /* space between grid items */
+}
+
+.profile-info h2 {
+    font-size: 28px;
+    color: #ff3c00;
+    margin-bottom: 15px;
+}
+
+.profile-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.profile-info p strong {
+    color: #ff3c00;
+}
+
+/* Buttons */
+.profile-buttons {
+    margin-top: 20px;
+}
+
+.profile-buttons .btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    margin-right: 10px;
+    transition: 0.3s ease;
+}
+
+.btn.primary {
+    background: #ff3c00;
+    color: #fff;
+}
+
+.btn.primary:hover {
+    background: #ff6a00;
+}
+
+.btn.outline {
+    border: 2px solid #ff3c00;
+    color: #ff3c00;
+}
+
+.btn.outline:hover {
+    background: #ff3c00;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-image {
+        padding: 20px 0;
+    }
+
+    .profile-info {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .profile-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .profile-buttons .btn {
+        width: 80%;
+    }
+    .profile-item {
+	    grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+</style>
+</head>
+<body>
+
+	<div th:replace="~{/user/header::header}"></div>
+	
+	<!-- Profile Container -->
+    <div class="profile-container">
+        <div class="profile-card">
+            <div class="profile-image">
+				<img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="User Image">
+				
+            </div>
+            
+            <div class="profile-info">
+                <h2 th:text="${fullName}"></h2>
+                
+                
+                <div class="profile-item">
+                		<p><strong>Email:</strong> <span th:text="${email}"></span></p>
+                		<p><strong>User ID:</strong> <span th:text="${userId}"></span></p>
+                		<p><strong>Mobile No.: </strong>+91 <span th:text="${phone}"></span></p>
+                		<p><strong>Membership Type:</strong> <span th:text="${#strings.isEmpty(memberShipType) ? 'No Active Plan' : memberShipType}"></span></p>
+                		<p><strong>Gender:</strong> <span th:text="${gender}"></span></p>
+		                <p><strong>Age:</strong> <span th:text="${age}"></span></p>
+		                <p><strong>Height:</strong> <span th:text="${height}"></span></p>
+		                <p><strong>Joined Date:</strong> <span th:text="${#strings.isEmpty(joinDate) ? 'N/A' : joinDate}"></span></p>
+               			<p><strong>Weight:</strong> <span th:text="${weight}"></span></p>
+		                <p><strong>End Date:</strong> <span th:text="${#strings.isEmpty(endDate) ? 'N/A' : endDate}"></span></p>
+                </div>
+                
+                <div class="profile-buttons">
+                    <a th:href="@{/user/profile/edit}" class="btn primary">Edit Profile</a>
+                    <a th:href="@{/user/dashboard}" class="btn outline">Back to Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<!-- JS -->
+	<div th:replace="~{/user/navbar_js::navbarScript}"></div>
+</body>
+</html>

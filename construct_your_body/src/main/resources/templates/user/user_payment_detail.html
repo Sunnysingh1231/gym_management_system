@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Construct Your Body</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    display:flex;
+    background:#0f172a;
+    color:#fff;
+}
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ff3c00;
+}
+
+.nav-buttons a {
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.back-btn {
+    border: 2px solid #ff3c00;
+    color: #ff3c00;
+}
+
+.back-btn:hover {
+    background: #ff3c00;
+    color: #fff;
+}
+/* Table Section */
+
+.table-section{
+    margin-top:80px;
+    
+    margin:80px auto;
+    background:#1e293b;
+    padding:20px;
+    border-radius:15px;
+}
+
+.table-section h2{
+    margin-bottom:15px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th, table td{
+    padding:12px;
+    text-align:left;
+}
+
+table th{
+    background:#334155;
+}
+
+table tr{
+    border-bottom:1px solid #334155;
+    transition:0.3s;
+}
+
+table tr:hover{
+    background:#2c3e50;
+}
+
+
+</style>
+</head>
+<body>
+
+	<!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">CyB</div>
+        <div class="nav-buttons">
+            <a th:href="@{/user/dashboard}" class="back-btn">Back</a>
+        </div>
+    </nav>
+
+    <!-- Table -->
+    <div class="table-section">
+        <h2>User Payment Details</h2>
+        <table id="tab">
+            <tr>
+            	<th>#</th>
+                <th>Email</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Date & time</th>
+            </tr>
+            <tbody>
+            	<tr th:each="user, sn : ${userPayment}">
+	            	<td th:text="${sn.index+1}"></td>
+	                <td th:text="${user.email}"></td>
+	                <td th:text="${user.memberShipType}"></td>
+	                <td th:text="${user.memberShipPrice}"></td>
+	                <td th:text="${user.memberShipStartDate}"></td>
+	                <td th:text="${user.memberShipEndDate}"></td>
+	                <td th:text="${user.paymenDateTime}"></td>
+	            </tr>
+            </tbody>
+        </table>
+    </div>
+	
+</body>
+</html>

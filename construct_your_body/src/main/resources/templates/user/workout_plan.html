@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Construct Your Body</title>
+<link rel="stylesheet" th:href="@{/user_css/header.css}">
+<style>
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body {
+    background: #0f0f0f;
+    color: #fff;
+}
+
+
+/* Container for all plans */
+.plans-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+}
+
+/* Each plan card */
+.plan-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 30px;
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color:#0f0f0f;
+}
+
+/* Hover effect */
+.plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Plan title */
+.plan-card h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Price styling */
+.plan-card .price {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Feature list */
+.plan-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.plan-card ul li {
+    margin: 10px 0;
+}
+
+/* Button styling */
+.plan-card button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.plan-card button:hover {
+    background-color: #0056b3;
+}
+	
+</style>
+</head>
+<body>
+
+	<div th:replace="~{/user/header::header}"></div>
+	
+	<div class="plans-container">
+        <div class="plan-card">
+            <h2>Monday</h2>
+            <p class="price">Chest (Main muscle)</p>
+            <ul>
+                <li>Chest</li>
+                <li>Shoulders</li>
+                <li>Tricepes</li>
+            </ul>
+        </div>
+
+        <div class="plan-card">
+            <h2>Tuesday</h2>
+            <p class="price">Back Focus (Main muscle)</p>
+            <ul>
+                <li>Back</li>
+                <li>Biceps</li>
+                <li>Rear Detail</li>
+            </ul>
+        </div>
+        
+        <div class="plan-card">
+            <h2>Wednesday</h2>
+            <p class="price">Leg (Main muscle)</p>
+            <ul>
+                <li>Leg Focus</li>
+                <li>Calves</li>
+                <li>Core</li>
+            </ul>
+        </div>
+        
+        <div class="plan-card">
+            <h2>Thursday</h2>
+            <p class="price">Shoulder (Main muscle)</p>
+            <ul>
+                <li>Soulder</li>
+                <li>Chest</li>
+                <li>Triceps</li>
+            </ul>
+        </div>
+        
+        <div class="plan-card">
+            <h2>Friday</h2>
+            <p class="price">Biceps (Main muscle)</p>
+            <ul>
+                <li>Biceps</li>
+                <li>Triceps</li>
+                <li>Forearms</li>
+            </ul>
+        </div>
+        
+        <div class="plan-card">
+            <h2>Saturday</h2>
+            <p class="price">Legs (Main muscle)</p>
+            <ul>
+                <li>legs & Core</li>
+                <li>Hamstrings</li>
+                <li>Quads</li>
+            </ul>
+            
+        </div>
+
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        © 2026 CyB Gym | All Rights Reserved
+    </footer>
+	
+<!-- JS -->
+	<div th:replace="~{/user/navbar_js::navbarScript}"></div>
+</body>
+</html>
