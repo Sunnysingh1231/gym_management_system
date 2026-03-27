@@ -15,11 +15,22 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+import com.cyb.customSuccessHandeler.CustSuccessHandeler;
+import com.cyb.entity.User;
 
 @Configuration
 @EnableWebSecurity
 public class SecuritConfig {
 	
+	@Autowired
+	private final CustSuccessHandeler customSuccessHandeler;
+	
+
+	public SecuritConfig(CustSuccessHandeler customSuccessHandeler) {
+		super();
+		this.customSuccessHandeler = customSuccessHandeler;
+	}
+
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity httpSecur) throws Exception{
 		
@@ -36,8 +47,8 @@ public class SecuritConfig {
 			.formLogin(form -> form
 					.loginPage("/login")
 					
-					.defaultSuccessUrl("/",true)
-//					.successHandler(customSuccessHandeler)
+//					.defaultSuccessUrl("/",true)
+					.successHandler(customSuccessHandeler)
 					.permitAll()
 				)
 			.logout(logout->logout
