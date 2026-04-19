@@ -1,8 +1,6 @@
 # Construct Your Body - Gym Management System
 A web  application to manage gym members, track payments, handle memberships, attendance and control overall gym operations efficiently.
 
-## 📌 Overview
-
 The **Gym Management System** is a software application designed to streamline and automate the daily operations of a fitness center or gym. It helps manage member registrations, subscriptions, attendance, trainer assignments, and billing efficiently.
 
 This project aims to reduce manual work, improve accuracy, and provide a better experience for both gym staff and members.
@@ -143,6 +141,18 @@ Contributions are welcome!
 * Diet & workout plan tracking
 * Notifications & reminders
 
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## 👨‍💻 Author
+
+* Your Name
+* GitHub: https://github.com/your-username
 
 ---
 
