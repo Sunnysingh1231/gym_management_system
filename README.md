@@ -6,37 +6,47 @@ A stylish and responsive **Gym Management Web Application** built to manage gym 
 
 ## 📸 Screenshots
 
-> Add your project screenshots inside a folder named `screenshots` and update the image paths below.
-
-### Home Page
-
-![Home Page](screenshots/home.png)
-
-### Dashboard Page
-
-![Dashboard](screenshots/dashboard.png)
-
-### Membership Plans
-
-![Membership Plans](screenshots/membership-plans.png)
-
-### Admin Dashboard
-
-![Admin Dashboard](screenshots/admin-dashboard.png)
+### Home Page / Registration Page
 
 <table>
   <tr>
     <td align="center">
-      <img src="screenshots/membership-plans.png" width="200"><br>
+      <img src="screenshots/home-page.png" width="500"><br>
+      <b> Clean and simple homepage design</b>
+    </td>
+    <td align="center">
+      <img src="screenshots/registration-page.png" width="500"><br>
+      <b>Stylish registration page - Secure and responsive login page</b>
+    </td>
+  </tr>
+</table>
+
+### Dashboard Page / Membership Plans
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenshots/dashboard-page.png" width="500"><br>
       <b>Clean and simple calculator interface</b>
     </td>
     <td align="center">
-      <img src="screenshots/screensort3.jpeg" width="200"><br>
+      <img src="screenshots/membership-plans.png" width="500"><br>
       <b>Supports multiple arithmetic operations</b>
     </td>
+  </tr>
+</table>
+
+### Admin Dashboard
+
+<table>
+  <tr>
     <td align="center">
-      <img src="screenshots/screensort4.jpeg" width="200"><br>
-      <b>Error handling for invalid expressions</b>
+      <img src="screenshots/home-page.png" width="500"><br>
+      <b>Clean and simple calculator interface</b>
+    </td>
+    <td align="center">
+      <img src="screenshots/registration-page.png" width="500"><br>
+      <b>Supports multiple arithmetic operations</b>
     </td>
   </tr>
 </table>
