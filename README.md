@@ -24,6 +24,23 @@ A stylish and responsive **Gym Management Web Application** built to manage gym 
 
 ![Admin Dashboard](screenshots/admin-dashboard.png)
 
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenshots/membership-plans.png" width="200"><br>
+      <b>Clean and simple calculator interface</b>
+    </td>
+    <td align="center">
+      <img src="screenshots/screensort3.jpeg" width="200"><br>
+      <b>Supports multiple arithmetic operations</b>
+    </td>
+    <td align="center">
+      <img src="screenshots/screensort4.jpeg" width="200"><br>
+      <b>Error handling for invalid expressions</b>
+    </td>
+  </tr>
+</table>
+
 ---
 
 ## ✨ Features
