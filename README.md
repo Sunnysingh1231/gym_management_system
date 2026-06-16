@@ -18,7 +18,7 @@ A stylish and responsive **Gym Management Web Application** built to manage gym 
 
 ### Membership Plans
 
-![Membership Plans](screenshots/plans.png)
+![Membership Plans](screenshots/membership-plans.png)
 
 ### Admin Dashboard
 
