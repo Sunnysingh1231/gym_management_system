@@ -1,163 +1,241 @@
-# Construct Your Body - Gym Management System
-A web  application to manage gym members, track payments, handle memberships, attendance and control overall gym operations efficiently.
+# 🏋️ Gym Management System
 
-The **Gym Management System** is a software application designed to streamline and automate the daily operations of a fitness center or gym. It helps manage member registrations, subscriptions, attendance, trainer assignments, and billing efficiently.
-
-This project aims to reduce manual work, improve accuracy, and provide a better experience for both gym staff and members.
-
----
-
-## 🚀 Features
-
-* 👤 **Member Management**
-
-  * Add, update, and delete member details
-  * Store personal and contact information
-
-* 📅 **Membership Plans**
-
-  * Create and manage different subscription plans
-  * Track plan duration and fees
-
-* 🧾 **Billing & Payments**
-
-  * Record member payments
-  * Generate invoices and payment history
-
-* 🏋️ **Trainer Management**
-
-  * Assign trainers to members
-  * Manage trainer schedules
-
-* 📊 **Attendance Tracking**
-
-  * Track daily member check-ins
-  * Maintain attendance records
-
-* 🔐 **Authentication System**
-
-  * Secure login for admin/staff
-  * Role-based access control
-
----
-
-## 🛠️ Technologies Used
-
-* **Frontend:** (e.g., HTML, CSS, JavaScript / React / Angular)
-* **Backend:** (e.g., Node.js / Django / Spring Boot)
-* **Database:** (e.g., MySQL / MongoDB / PostgreSQL)
-* **Other Tools:** (e.g., Git, REST APIs)
-
-*(Update this section based on your actual tech stack)*
-
----
-
-## 📂 Project Structure
-
-```
-gym-management-system/
-│
-├── frontend/        # UI code
-├── backend/         # Server-side logic
-├── database/        # Database schema or scripts
-├── docs/            # Documentation files
-├── README.md        # Project documentation
-└── .gitignore
-```
-
----
-
-## ⚙️ Installation & Setup
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/your-username/gym-management-system.git
-   cd gym-management-system
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Configure environment variables**
-
-   * Create a `.env` file
-   * Add database credentials and other configs
-
-4. **Run the application**
-
-   ```bash
-   npm start
-   ```
-
-5. Open in browser:
-
-   ```
-   http://localhost:3000
-   ```
-
----
-
-## 🧪 Usage
-
-* Register new members through the dashboard
-* Assign membership plans
-* Track attendance daily
-* Manage payments and invoices
-* Monitor overall gym activity
+A stylish and responsive **Gym Management Web Application** built to manage gym memberships, trainers, payments, user profiles, and admin controls. The system provides a smooth experience for users to register, login, buy or update membership plans, select trainers, and manage their fitness journey.
 
 ---
 
 ## 📸 Screenshots
 
-*(Add screenshots of your project UI here)*
+> Add your project screenshots inside a folder named `screenshots` and update the image paths below.
+
+### Home Page
+
+![Home Page](screenshots/home.png)
+
+### Dashboard Page
+
+![Dashboard](screenshots/dashboard.png)
+
+### Membership Plans
+
+![Membership Plans](screenshots/plans.png)
+
+### Admin Dashboard
+
+![Admin Dashboard](screenshots/admin-dashboard.png)
 
 ---
 
-## 🤝 Contributing
+## ✨ Features
 
-Contributions are welcome!
+### 👤 User Features
 
-1. Fork the repository
-2. Create a new branch
-3. Make your changes
-4. Submit a pull request
+* User registration and login
+* Secure authentication using **Spring Security**
+* View available membership plans
+* Buy gym plans:
 
----
+  * Silver
+  * Gold
+  * Platinum
+* Select trainer
+* Make payment
+* Update membership plan
+* Edit user profile
+* Access user dashboard after login
+* Fully responsive design for mobile, tablet, and desktop
 
-## 🐛 Known Issues
+### 🛠️ Admin Features
 
-* (List any known bugs or limitations here)
-
----
-
-## 📈 Future Enhancements
-
-* Mobile app integration
-* Online payment gateway
-* Diet & workout plan tracking
-* Notifications & reminders
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**.
+* Admin login using the same login page
+* Admin dashboard
+* Manage all users
+* Update membership plan prices
+* View and control gym management data
 
 ---
 
-## 👨‍💻 Author
+## 📄 Pages Included
 
-* Your Name
-* GitHub: https://github.com/your-username
+* Home Page
+* Dashboard Page
+* Membership Plan Page
+* About Page
+* Contact Page
+* Login Page
+* Registration Page
+* Admin Dashboard Page
 
 ---
 
-## ⭐ Acknowledgements
+## 🧰 Tech Stack
 
-* Thanks to all contributors and open-source libraries used in this project.
+* **Java**
+* **Spring Boot**
+* **Spring Security**
+* **Thymeleaf**
+* **HTML5**
+* **CSS3**
+* **JavaScript**
+* **MySQL / Database**
+* **Bootstrap / Responsive Design**
 
 ---
+
+## 🔐 Authentication
+
+The project uses **Spring Security** for secure login and registration.
+
+After successful login:
+
+* Normal users are redirected to the user dashboard
+* Admin users are redirected to the admin dashboard
+
+---
+
+## 💳 Membership Plans
+
+Users can choose from different gym plans:
+
+| Plan     | Description                                           |
+| -------- | ----------------------------------------------------- |
+| Silver   | Basic gym membership plan                             |
+| Gold     | Advanced plan with extra benefits                     |
+| Platinum | Premium plan with trainer sessions and extra features |
+
+Admin can update the price of each plan from the admin dashboard.
+
+---
+
+## 📱 Responsive Design
+
+The application is designed with a modern and stylish UI.
+It works smoothly on:
+
+* Desktop screens
+* Tablets
+* Mobile phones
+
+---
+
+## 🚀 How to Run the Project
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+```
+
+2. Open the project in your IDE
+
+3. Run the Spring Boot application
+
+```bash
+mvn spring-boot:run
+```
+
+4. Open the app in your browser
+
+```bash
+http://localhost:8080
+```
+
+---
+
+## 📂 Project Structure
+
+```bash
+## 📂 Project Structure
+
+```text
+construct_your_body/
+│
+├── src/main/java/
+│   ├── com.cyb
+│   │   ├── ConstructYourBodyApplication.java
+│   │
+│   ├── com.cyb.config
+│   │   └── SecuritConfig.java
+│   │
+│   ├── com.cyb.controller
+│   │   ├── AdminController.java
+│   │   └── UserController.java
+│   │
+│   ├── com.cyb.customSuccessHandler
+│   │   └── CustSuccessHandler.java
+│   │
+│   ├── com.cyb.entity
+│   │   ├── User.java
+│   │   ├── Planrate.java
+│   │   ├── ActiveMemberDetails.java
+│   │   └── MemberShipPaymentDetail.java
+│   │
+│   ├── com.cyb.service
+│   │   ├── AdminService.java
+│   │   └── UserService.java
+│   │
+│   └── com.cyb.service.impl
+│       ├── AdminServiceImpl.java
+│       └── UserServiceImpl.java
+│
+├── src/main/resources/
+│   │
+│   ├── static/
+│   │   ├── admin_css/
+│   │   ├── user_css/
+│   │   ├── js/
+│   │   ├── user_js/
+│   │   └── index.css
+│   │
+│   └── templates/
+│       ├── admin/
+│       ├── user/
+│       ├── index.html
+│       └── login.html
+│
+├── screenshots/
+│   ├── home-page.png
+│   ├── dashboard.png
+│   ├── membership-plans.png
+│   ├── admin-dashboard.png
+│   └── mobile-view.png
+│
+├── pom.xml
+└── README.md
+```
+
+### Architecture Overview
+
+* **Controller Layer** → Handles user requests and page navigation.
+* **Service Layer** → Contains business logic for users, memberships, and admin operations.
+* **Entity Layer** → Stores database models such as Users, Membership Plans, Active Members, and Payment Details.
+* **Security Layer** → Spring Security authentication and authorization.
+* **Custom Success Handler** → Redirects Admin and Users to their respective dashboards after login.
+* **Frontend Layer** → Thymeleaf templates with responsive HTML, CSS, and JavaScript.
+
+```
+
+---
+
+## 🎯 Future Improvements
+
+* Online payment gateway integration
+* Attendance tracking
+* Trainer scheduling system
+* Email notifications
+* Workout and diet plan management
+* Membership expiry alerts
+
+---
+
+## 🙋‍♂️ Author
+
+**Your Name**
+
+GitHub: [your-github-profile](https://github.com/your-username)
+
+---
+
+## ⭐ Support
+
+If you like this project, give it a ⭐ on GitHub!
