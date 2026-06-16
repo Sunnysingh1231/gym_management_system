@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin-Cyb</title>
+<link rel="stylesheet" th:href="@{/admin_css/classes.css}">
+<link rel="stylesheet" th:href="@{/admin_css/header.css}">
+</head>
+<body>
+
+	<!-- Nav Bar -->
+	<div th:replace="~{/admin/header::navbar}"></div>
+	
+	<div class="main">
+		
+		<!-- Plan Rate Management -->
+
+	<div class="table-section">
+    <h2>Membership Plan Rates</h2>
+
+    <form th:action="@{/admin/update-plan-rate}" method="post">
+
+        <div class="plan-grid">
+
+            <div class="plan-card">
+                <h3>🥈 Silver Plan</h3>
+                <label>Price (₹)</label>
+                <input type="number"
+                       name="silver"
+                       th:value="${silver}"
+                       placeholder="Enter Silver Plan Price"
+                       required>
+            </div>
+
+            <div class="plan-card">
+                <h3>🥇 Gold Plan</h3>
+                <label>Price (₹)</label>
+                <input type="number"
+                       name="gold"
+                       th:value="${gold}"
+                       placeholder="Enter Gold Plan Price"
+                       required>
+            </div>
+
+            <div class="plan-card">
+                <h3>💎 Platinum Plan</h3>
+                <label>Price (₹)</label>
+                <input type="number"
+                       name="platinum"
+                       th:value="${platinum}"
+                       placeholder="Enter Platinum Plan Price"
+                       required>
+            </div>
+
+        </div>
+
+        <button type="submit" class="save-btn">
+            Save Plan Rates
+        </button>
+
+    </form>
+</div>
+	
+	</div>
+	
+
+	<script>
+		function toggleMenu(){
+		    document.getElementById("sidebar").classList.toggle("active");
+		    document.querySelector(".overlay").classList.toggle("active");
+		    document.getElementById("mobile-menu").classList.toggle("act");
+		}
+	</script>
+</body>
+</html>

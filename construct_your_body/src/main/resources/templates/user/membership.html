@@ -29,9 +29,9 @@
 		            <i class="fas fa-dumbbell"></i>
 		        </div>
 		        <h2>Platinum Membership</h2>
-		        <div class="price">₹1999 / month</div>
+		        <div class="price" th:text="${'₹'+plati+' / month'}">₹1999 / month</div>
 		        <p>2 training sessions a month, health check, and 10% off gym gear.</p>
-		        <button th:value="1999+','+Platinum" name="value">Join Now</button>
+		        <button th:value="${plati + ',Platinum'}" name="value">Join Now</button>
 		    </div>
 	
 		    <div class="card">
@@ -39,9 +39,9 @@
 		            <i class="fa-solid fa-weight-hanging"></i>
 		        </div>
 		        <h2 name="type" th:value="Gold">Gold Membership</h2>
-		        <div class="price" name="value" th:value="1999">₹1499 / month</div>
+		        <div class="price" name="value" th:value="1999"  th:text="${'₹'+gold+' / month'}">₹1499 / month</div>
 		        <p>Unlimited gym access, 3 free classes per week, 1 personal training session per month.</p>
-		        <button th:value="1499+','+Gold" name="value">Join Now</button>
+		        <button th:value="${gold + ',gold'}" name="value">Join Now</button>
 		    </div>
 		
 		    <div class="card">
@@ -49,9 +49,9 @@
 		            <i class="fas fa-dumbbell"></i>
 		        </div>
 		        <h2>Silver Membership</h2>
-		        <div class="price">₹999 / month</div>
+		        <div class="price"  th:text="${'₹'+silv+' / month'}">₹999 / month</div>
 		        <p>Unlimited gym access, 1 class per week & access to standard locker rooms.</p>
-		        <button th:value="999+','+Silver" name="value">Join Now</button>
+		        <button th:value="${silv + ',silver'}" name="value" >Join Now</button>
 		    </div>
 		
 		</section>
