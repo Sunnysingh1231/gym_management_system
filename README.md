@@ -27,11 +27,11 @@ A stylish and responsive **Gym Management Web Application** built to manage gym 
   <tr>
     <td align="center">
       <img src="screenshots/dashboard-page.png" width="500"><br>
-      <b>Clean and simple calculator interface</b>
+      <b>Modern and responsive dashboard with real-time access to active plans, membership, trainer selection, payment details, and account settings</b>
     </td>
     <td align="center">
       <img src="screenshots/membership-plans.png" width="500"><br>
-      <b>Supports multiple arithmetic operations</b>
+      <b>Dedicated membership page for viewing, purchasing, and upgrading Silver, Gold, and Platinum gym plans</b>
     </td>
   </tr>
 </table>
@@ -41,12 +41,12 @@ A stylish and responsive **Gym Management Web Application** built to manage gym 
 <table>
   <tr>
     <td align="center">
-      <img src="screenshots/home-page.png" width="500"><br>
-      <b>Clean and simple calculator interface</b>
+      <img src="screenshots/admin-page.png" width="500"><br>
+      <b>The admin can efficiently handle all gym operations through a centralized management panel.</b>
     </td>
     <td align="center">
-      <img src="screenshots/registration-page.png" width="500"><br>
-      <b>Supports multiple arithmetic operations</b>
+      <img src="screenshots/payment-page.png" width="500"><br>
+      <b>The payment module allows users to complete their membership purchases quickly and securely.</b>
     </td>
   </tr>
 </table>
@@ -104,8 +104,6 @@ A stylish and responsive **Gym Management Web Application** built to manage gym 
 * **HTML5**
 * **CSS3**
 * **JavaScript**
-* **MySQL / Database**
-* **Bootstrap / Responsive Design**
 
 ---
 
@@ -246,20 +244,10 @@ construct_your_body/
 
 ## 🎯 Future Improvements
 
-* Online payment gateway integration
 * Attendance tracking
 * Trainer scheduling system
-* Email notifications
 * Workout and diet plan management
 * Membership expiry alerts
-
----
-
-## 🙋‍♂️ Author
-
-**Your Name**
-
-GitHub: [your-github-profile](https://github.com/your-username)
 
 ---
 
